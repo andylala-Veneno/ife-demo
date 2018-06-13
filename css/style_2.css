@@ -1,0 +1,42 @@
+@charset "utf-8";
+.resume-2{
+	width: 930px;
+	margin: 50px auto 0;
+	background-color: #fff;
+	box-shadow: 0 0 5px 2px #ddd;
+}
+.resume-2 .left{
+	width: 195px;
+	height: 878px;
+	background-color: #65a5fa;
+}
+.resume-2 h3{
+	color: #fff;
+	text-align: center;
+	line-height: 168px;
+	font-size: 38px;
+}
+.resume-2 .right{
+	width: 735px;
+	height: 878px;
+	padding: 14px 24px;
+	box-sizing: border-box;
+}
+.resume-2 .right h4{
+	font-size: 28px;
+	line-height: 68px;
+}
+.resume-2 .right span{
+	font-size: 20px;
+}
+.resume-2 .des{
+	line-height: 24px;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.resume-2 .first{
+	margin-top: 18px;
+}
+.resume-2 .content{
+	margin-bottom: 13px;
+}
