@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ife-学习布局</title>
+	<style type="text/css">
+		body,h1,h2,h3,h4,h5,h6,p,ul{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-size: 14px;
+		}
+		h1{
+			color: #fff;
+			line-height: 64px;
+			font-size: 22px;
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			margin-right: 3px;
+			color: #fff;
+			line-height: 32px;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.pst-rl{
+			position: relative;
+		}
+		.pst-ab{
+			position: absolute;
+		}
+		.header{
+			height: 64px;
+			background-color: #333;
+		}
+		.header .header-con{
+			width: 960px;
+			margin: auto;
+		}
+		.content .banner{
+			height: 236px;
+			margin-bottom: 16px;
+			background-color: #67bb32;
+		}
+		.content .banner ul{
+			right: 0px;
+			bottom: 0px;
+		}
+		.content .banner ul li{
+			width: 22px;
+			height: 26px;
+			margin-top: 14px;
+			background-color: rgba(255,255,255,.6);
+			border: 1px solid #ccc;
+			text-align: center;
+			line-height: 26px;
+		}
+		.content .banner ul .cur{
+			height: 26px;
+			margin-top: 0;
+			padding-top: 14px;
+			background-color: #fff;
+		}
+		.content .nav{
+			z-index: 1;
+			width: 960px;
+			height: 40px;
+			margin: auto;
+		}
+		.content .nav .tab{
+			width: 90px;
+			height: 38px;
+			background-color: #eee;
+			border: 1px solid #ddd;
+			border-radius: 12px 12px 0 0;
+			text-align: center;
+			line-height: 38px;
+		}
+		.content .nav .cur{
+			background-color: #fff;
+			border-bottom: 0;
+			box-shadow: 0 2px 2px 0px #fff;
+		}
+		.content .line{
+			left: 0;
+			top: 354.5px;
+			width: 100%;
+			border: .5px solid #ddd;
+		}
+		.content .main-con{
+			display: flex;
+			flex-wrap: wrap;
+			width: 960px;
+			margin: 10px auto 0;
+		}
+		.content .main-con div{
+			flex: 1;
+			margin: 0 8px 8px 0;
+			padding: 80px;
+			border: 1px solid #ccc;
+			text-align: center;
+			box-sizing: border-box;
+		}
+		.content .main-con div:nth-child(1),.content .main-con div:nth-child(2){
+			flex-basis: 253px;
+		}
+		.footer{
+			height: 95px;
+			margin-top: 8px;
+			padding-top: 16px;
+			background-color: #333;
+			text-align: center;
+			color: #fff;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<div class="header-con clearfix">
+				<h1 class="fl">Logo</h1>
+				<p class="fr">
+					<a href="#">Github</a>
+					<a href="#">Register</a>
+					<a href="#">Login</a>
+				</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="banner pst-rl">
+				<ul class="pst-ab clearfix">
+					<li class="fl">1</li>
+					<li class="cur fl">2</li>
+					<li class="fl">3</li>
+					<li class="fl">4</li>
+				</ul>
+			</div>
+			<div class="nav pst-rl">
+				<div class="tab fl cur">HOME</div>
+				<div class="tab fl">PROFILE</div>
+				<div class="tab fl">ABOUT</div>
+			</div>
+			<i class="line pst-ab"></i>
+			<div class="main-con">
+				<div>This is Content 1</div>
+				<div>MaybeContent 2</div>
+				<div>Content 3</div>
+				<div>Content 4</div>
+				<div>Content 5</div>
+				<div>Content 6</div>
+				<div>Content 7</div>
+				<div>Content 8</div>
+				<div>Content 9</div>
+				<div>Content 10</div>
+			</div>
+		</div>
+		<div class="footer">&copy;2018 ife.baidu.com</div>
+	</div>
+</body>
+</html>
