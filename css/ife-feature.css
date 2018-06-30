@@ -1,0 +1,56 @@
+@charset "utf-8";
+.feature{
+	overflow: hidden;
+}
+.feature h3{
+	width: 660px;
+	margin: 89px auto 0;
+	text-align: center;
+	font-weight: normal;
+	font-size: 12px;
+}
+.feature h3 p:nth-child(2){
+	margin-top: 30px;
+	font-size: 36px;
+}
+.feature ul{
+	width: 1036px;
+	margin: 81px auto 90px;
+}
+.feature ul li{
+	width: 518px;
+	height: 141px;
+}
+.feature ul li > div{
+	height: 100%;
+}
+.feature ul li .feature-icon{
+	width: 53px;
+	height: 52px;
+}
+.feature ul li:nth-child(1) .feature-icon{
+	background: url("../images/icon.png") no-repeat 2px -76px;
+}
+.feature ul li:nth-child(2) .feature-icon{
+	background: url("../images/icon.png") no-repeat -53px -73px;
+}
+.feature ul li:nth-child(3) .feature-icon{
+	background: url("../images/icon.png") no-repeat -8px -8px;
+}
+.feature ul li:nth-child(4) .feature-icon{
+	background: url("../images/icon.png") no-repeat -78px -9px;
+}
+.feature ul li .feature-r{
+	width: 465px;
+	padding-left: 18px;
+	padding-right: 110px;
+	box-sizing: border-box;
+}
+.feature ul li .feature-r h4{
+	margin-bottom: 19px;
+	font-size: 18px;
+}
+.feature ul li .feature-r p{
+	color: #8d8d8d;
+	line-height: 26px;
+}

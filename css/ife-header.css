@@ -1,0 +1,68 @@
+@charset "utf-8";
+.header{
+	overflow: hidden;
+	background: url("../images/signup-bg.png") no-repeat center/cover;
+}
+h1{
+	margin: 212px 0 40px 0;
+	color: #fff;
+	text-align: center;
+	font-size: 48px;
+	font-weight: lighter;
+}
+.header p{
+	width: 766px;
+	margin: 0 auto 104px;
+	line-height: 32px;
+	color: #ccc;
+	text-align: center;
+}
+.header > p{
+	font-size: 18px;
+	word-spacing: 6px;
+}
+.header .account{
+	width: 978px;
+	height: 248px;
+	margin: 0 auto 243px;
+	padding: 54px 99px 50px;
+	border: 1px solid #666;
+	box-sizing: border-box;
+}
+.header .account h3{
+	color: #fff;
+	font-weight: lighter;
+	text-align: center;
+	word-spacing: 10px;
+}
+.header .account p{
+	margin: 2px 0 35px;
+	color: #666;
+	font-size: 12px;
+}
+.header .account input{
+	width: 290px;
+	height: 48px;
+	margin-right: 30px;
+	padding: 0;
+	background-color: transparent;
+	border: 1px solid #666;
+	outline: none;
+	text-indent: 20px;
+	color: #fff;
+}
+.header .account .submit:hover{
+	cursor: pointer;
+}
+.header .account input:first-of-type::-webkit-input-placeholder{
+	color: #fff;
+}
+.header .account .submit{
+	width: 125px;
+	height: 50px;
+	margin-right: 0;
+	background-color: #fff;
+	border: 0;
+	text-indent: 0;
+	color: #000;
+}
