@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript -- 将十进制非负整数转换成二进制扩展版</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+        var oDec = document.getElementById("dec-number"),
+            oBin = document.getElementById("bin-bit"),
+            oButton = document.getElementById("trans-btn"),
+            oP = document.getElementById("result");
+        function dec2bin(decNumber) {
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            // 这里是上一个任务的实现
+            var arr = [],
+                len = Number(oBin.value);//获取转换二进制位数的长度
+            //当输入的十进制为负数或者二进制位数为负数时弹窗提示
+            if(decNumber < 0 || len < 0){
+               alert("请输入非负整数或者非负转换的二进制位数");
+            }
+            else{
+                if(decNumber === 0){
+                    var zeroArr = [];
+                    if(len <= 1){
+                        console.log("输入的位数小于或者等于二进制的位数");
+                        oP.innerHTML = "运算结果" + 0;//在p标签内更新结果
+                    }
+                    else{
+                        for(var i = 0;i < len;i++){
+                            zeroArr.push(0);
+                        }
+                        oP.innerHTML = "运算结果" + zeroArr.join("");//在p标签内更新结果
+                    }
+                }
+                else{
+                    while(Math.floor(decNumber/2) >= 1){
+                        arr.push(decNumber - 2 * Math.floor(decNumber/2));//将余数存在数组当中
+                        decNumber = Math.floor(decNumber/2);//更新被除数，把商作为新的被除数
+                    }
+                    arr.push(1);//当商为0是往数组中添加1
+                    var arrLen = arr.length;
+                    if(arrLen >= len){
+                        console.log("输入的位数小于或者等于二进制的位数");
+                    }
+                    else{
+                        for(var i = 0,addLen = len - arrLen;i < addLen;i++){
+                            arr.push(0);
+                        }
+                    }
+                    var str = arr.reverse().join("");//将数组倒序排列，并且拼接成字符串
+                    oP.innerHTML = "运算结果" + str;//在p标签内更新结果
+                }
+            }
+        }
+
+        // 实现当点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+        // 新的需求是，转化显示后的二进制数为bin-bit中输入的数字宽度，例如
+        // dec-number为5，bin-bit为5，则转化后数字为00101
+        // 如果bin-bit小于转化后的二进制本身位数，则使用原本的位数，如dec-number为5，bin-bit为2，依然输出101，但同时在console中报个错
+        // Some coding
+        oButton.onclick = function(){
+            //当没有输入的时候弹窗提示
+            if(oDec.value === "" || oBin.value === ""){
+                alert("您没有输入一个非负整数或者转换的二进制位数为空 ^_^!");
+            }
+            else{
+                dec2bin(Number(oDec.value));//dec2bin作为oButton点击事件的回调函数
+            }
+        }
+    </script>
+</body>
+</html>

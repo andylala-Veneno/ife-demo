@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript -- 将十进制非负整数转换成二进制</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+		var oInput = document.getElementById("dec-number"),
+			oButton = document.getElementById("trans-btn"),
+			oP = document.getElementById("result");
+		function dec2bin(decNumber) {
+		    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+		    var arr = [];
+		   	if(decNumber < 0){
+		   		//当输入负整数时弹窗提示
+		   		alert("请输入非负整数");
+		   	}
+		   	else{
+		   		if(decNumber === 0){
+		   			oP.innerHTML = "运算结果" + 0;//在p标签内更新结果
+		   		}
+		   		else{
+		   			while(Math.floor(decNumber/2) >= 1){
+			   			arr.push(decNumber - 2 * Math.floor(decNumber/2));//将余数存在数组当中
+			   			decNumber = Math.floor(decNumber/2);//更新被除数，把商作为新的被除数
+			   		}
+			   		arr.push(1);//当商为0是往数组中添加1
+		   			var str = arr.reverse().join("");//将数组倒序排列，并且拼接成字符串
+		   			oP.innerHTML = "运算结果" + str;//在p标签内更新结果
+		   		}
+		   	}
+		}
+		// 实现当点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+		// Some coding
+		oButton.onclick = function(){
+			//当没有输入的时候弹窗提示
+			if(oInput.value === ""){
+				alert("您没有输入一个非负整数，请输入 ^_^!");
+			}
+			else{
+				dec2bin(Number(oInput.value));//dec2bin作为oButton点击事件的回调函数
+			}
+		}
+    </script>
+</body>
+</html>
