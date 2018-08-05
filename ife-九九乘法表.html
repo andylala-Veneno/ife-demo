@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>ife-九九乘法表</title>
+  <style>
+	body{
+		margin:0;
+	}
+	span{
+		display:inline-block;
+		width:82px;
+		height:42px;
+		margin-right:10px;
+		margin-bottom:10px;
+		border:1px solid #000;
+		line-height:40px;
+		text-align:center;
+	}
+	.multiplication{
+		margin-bottom:10px;
+		border-bottom:1px solid #000;
+	}
+  </style>
+ </head>
+ <body>
+	<div class="multiplication"></div>
+	<div class="multiplication"></div>
+	<div class="multiplication"></div>
+	<div class="multiplication"></div>
+	<script>
+		var aMultiplication = document.getElementsByClassName("multiplication");
+		for(var i = 1;i < 10;i++){
+			var j = i;
+			for(var k = 1;k <= j;k++){
+				aMultiplication[0].innerHTML += "<span>" + j + "*" + k + "=" + (k * j)+"</span>";
+			}
+			aMultiplication[0].innerHTML += "</br>";
+		}
+		for(var i = 1;i < 10;i++){
+			var j = i;
+			for(var k = j;k <= 9;k++){
+				aMultiplication[1].innerHTML += "<span>" + j + "*" + k + "=" + (j * k)+"</span>";
+			}
+			aMultiplication[1].innerHTML += "</br>";
+		}
+		for(var i = 9;i > 0;i--){
+			var j = i;
+			for(var k = 1;k <= j;k++){
+				aMultiplication[2].innerHTML += "<span>" + j + "*" + k + "=" + (k * j)+"</span>";
+			}
+			aMultiplication[2].innerHTML += "</br>";
+		}
+		for(var i = 9;i > 0;i--){
+			var j = i;
+			for(var k = j;k <= 9;k++){
+				aMultiplication[3].innerHTML += "<span>" + j + "*" + k + "=" + (j * k)+"</span>";
+			}
+			aMultiplication[3].innerHTML += "</br>";
+		}
+	</script>
+ </body>
+</html>
