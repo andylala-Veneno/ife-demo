@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ife -- 字符串和数组</title>
+	<style type="text/css"></style>
+</head>
+<body>
+    <script>
+		/*
+		实现一个字符串头尾去除空格的函数
+		注意需要去除的空格，包括全角、半角空格
+		暂时不需要学习和使用正则表达式的方式
+		*/
+		function diyTrim(str) {
+		    var result = "";
+
+		    // do something
+
+		    var arr = str.split(""),//将字符串拼接成数组
+		    	arr2 = [],
+		    	first,//存储数组arr2添加数据成员的起始位置
+		    	last,//存储数组arr2添加数据成员的结束位置
+		    	len = arr.length;
+		    //获取起始位置first的值
+		    for(i = len - 1;i >= 0;i--){
+		    	if((arr[i] !== " ") && (arr[i] !== "　")){
+		    		first = i;
+		    	}
+		    }
+		    //获取结束位置last的值
+		    for(var i = 0;i < len;i++){
+		    	if((arr[i] !== " ") && (arr[i] !== "　")){
+		    		last = i;
+		    	}
+		    }
+		    //往数组arr2添加内容，此时的数组arr2是去除了str中首尾半角空格和全角空格的新数组
+		    for(var i = first,len2 = last + 1;i < len2;i++){
+		    	arr2.push(arr[i]);
+		    }
+		    //将数组arr2拼接成字符串并且返回给result
+		    var str2 = arr2.join("");
+		    result = str2;
+		    return result
+		}
+		// 测试用例
+		console.log(diyTrim(' a f b    ')); // ->a f b
+		console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+		console.log(diyTrim('1    ')); // ->1
+		console.log(diyTrim('　　f')); // ->f
+		console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+		console.log(diyTrim(' ')); // ->
+		console.log(diyTrim('　')); // ->
+		console.log(diyTrim('')); // ->
+
+		/*
+		去掉字符串str中，连续重复的地方
+		*/
+		function removeRepetition(str) {
+		    var result = "";
+
+		    // do something
+
+		    //将字符串拼接成数组存储在arr中
+		    var arr = str.split(""),
+		    //对数组arr进行过滤，去除连续重复的部分，并且存储在新的数组arr2中
+		    	arr2 = arr.filter(function(item,index,self){
+		    		//当数组下标为0时返回本身
+		    		if(index === 0){
+		    			return self[index];
+		    		}
+		    		//如果当前数据成员和上一个数据成员不同时，返回本身,否则过滤
+		    		else{
+		    			return (self[index] !== self[index - 1]);
+		    		}
+		    });
+		   	//将数组arr2拼接成字符串并且返回给result
+		    var str2 = arr2.join("");
+		    result = str2;
+		    return result;
+		}
+
+		// 测试用例
+		console.log(removeRepetition("aaa")); // ->a
+		console.log(removeRepetition("abbba")); // ->aba
+		console.log(removeRepetition("aabbaabb")); // ->abab
+		console.log(removeRepetition("")); // ->
+		console.log(removeRepetition("abc")); // ->abc
+    </script>
+</body>
+</html>
