@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ife -- 更新时间</title>
+	<style type="text/css"></style>
+</head>
+<body>
+    <script>
+    	setInterval(getTime,1000);
+    	function getTime(){
+    		var date = new Date(),
+	    		year = getYear(date),
+	    		month = getMonth(date),
+	    		day = getDate(date),
+	    		week1 = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"][getWeek(date)],
+	    		week2 = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][getWeek(date)],
+	    		hour = getHour(date),
+	    		minute = getMinute(date),
+	    		second = getSecond(date);
+    		month++;
+    		printTime1(year,month,day,week1,hour,minute,second);
+    		printTime2(year,month,day,week2,hour,minute,second);
+    	}
+    	//返回年
+    	function getYear(date){
+    		return date.getFullYear();
+    	}
+    	//返回月
+    	function getMonth(date){
+    		return date.getMonth();
+    	}
+    	//返回日
+    	function getDate(date){
+    		return date.getDate();
+    	}
+    	//返回星期
+    	function getWeek(date){
+    		return date.getDay();
+    	}
+    	//返回小时
+    	function getHour(date){
+    		return date.getHours();
+    	}
+    	//返回分钟
+    	function getMinute(date){
+    		return date.getMinutes();
+    	}
+    	//返回秒
+    	function getSecond(date){
+    		return date.getSeconds();
+    	}
+    	function getDayTime(hours){
+    		if(hours < 12){
+    			return "AM";
+    		}
+    		else{
+    			return "PM";
+    		}
+    	}
+    	//第一种输出格式
+    	function printTime1(year,month,day,week,hour,minute,second){
+    		console.log(year + "年" + addZero(month) + "月" + addZero(day) + "日" + week + " " + addZero(hour) + ":" + addZero(minute) + ":" + addZero(second));
+    	}
+    	//第二种输出格式
+    	function printTime2(year,month,day,week,hour,minute,second){
+    		console.log(year + "-" + addZero(month) + "-" + addZero(day) + " " + week + " " + addZero(hour) + ":" + addZero(minute) + ":" + addZero(second) + " " + getDayTime(hour));
+    	}
+    	//对月、日、小时、分钟、秒进行补0
+    	function addZero(num){
+    		if(num < 10){
+    			return "0" + num;
+    		}
+    		else{
+    			return num;
+    		}
+    	}
+    </script>
+</body>
+</html>
